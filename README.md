@@ -44,25 +44,31 @@ To run the Method of Characteristics Bell Nozzle Design program:
 
 
 1. **Ensure the following files are in the same folder:**
-moc_bell_nozzle.m
-run_moc_nozzle_design.m
- 
+   **`moc_bell_nozzle.m`**
+   **`run_moc_nozzle_design.m`**
+
 2. **Open MATLAB**, and in the **Current Folder** panel, navigate to the folder containing both files.  
 Alternatively, you can set the path manually:
-```matlab
-cd('C:\path\to\your\project\folder')
-3. Run the driver script in the MATLAB Command Window by typing: run_moc_nozzle_design
-4. Enter the required inputs when prompted:
-=== METHOD OF CHARACTERISTICS NOZZLE DESIGN ===
-Enter chamber pressure P0 [Pa]: (input here)
-Enter ratio of specific heats (gamma): (input here)
-Enter throat radius TR [mm]: (input here)
-5. View and save the results:
+4. **Run the Driver** script in the MATLAB Command Window by typing:
+
+   **`run_moc_nozzle_design`**
+   
+5. **Enter** the required inputs when prompted:
+
+   **`=== METHOD OF CHARACTERISTICS NOZZLE DESIGN ===`**
+
+   **`Enter chamber pressure P0 [Pa]: (input here)`**
+
+   **`Enter ratio of specific heats (gamma): (input here)`**
+
+   **`Enter throat radius TR [mm]: (input here)`**
+ 
+6. **View and save the results:**
    -The program will execute the MOC solver
    - Plot the bell nozzle contour
-   - Display the exit radius and nozzle length in the Command Window
    - Automatically save wall-coordinate data to:
-PARAMS.xlsx
+
+     **`PARAMS.xlsx`**
 
 
 

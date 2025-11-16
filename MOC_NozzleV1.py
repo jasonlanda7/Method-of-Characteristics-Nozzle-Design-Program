@@ -3,7 +3,7 @@
 #  METHOD OF CHARACTERISTICS (MOC) FOR AXISYMMETRIC NOZZLE DESIGN (Python)
 # =========================================================================
 #
-#  Author: [Jason Da Silva]  |  Python port by: ChatGPT
+#  Author: [Jason Da Silva]
 #  Credits: Characteristic-line formulation & base logic adapted from
 #           VDEngineering on YouTube (2025).
 #
@@ -140,10 +140,10 @@ def moc_bell_nozzle(P0: float, g: float, TR: float, do_plot: bool = True):
     RR = RR[1:]
     LR = LR[1:]
     SL = SL[1:]
-    T = T  # first entry is T[0] = DT*DtoR, same as MATLAB T(1)
+    T = T  # first entry is T[0] = DT*DtoR, same as MATLAB T(1)!
 
-    # Construct intersections of interior characteristics with the initial fan
-    # F = RR(end) in MATLAB (used as a constant slope)
+    # Construct intersections of interior characteristics with the initial Expansion fan
+    
     F = RR[-1]
 
     # Intersections (x, y) for interior nodes along last C+ slope F
@@ -188,15 +188,11 @@ def moc_bell_nozzle(P0: float, g: float, TR: float, do_plot: bool = True):
         xw.append(xwk)
         yw.append(ywk)
 
-    # Second pass in MATLAB re-plots lines from interior nodes to wall points.
-    # Geometry already captured above; replicate end state only.
-
     # Determine nozzle exit from final characteristic
     k_end = len(P) - 1
     x_exit = xw[k_end - 1]  # last valid index in zero-based (k_end-1)
     y_exit = yw[k_end - 1]
 
-    # Trim/append (matching MATLAB’s behavior)
     xw = xw[:k_end]
     yw = yw[:k_end]
     xw.append(x_exit)
@@ -298,3 +294,4 @@ if __name__ == "__main__":
     print(f"Exit radius (Re): {results['exit_radius']:.3f} mm")
     print(f"Nozzle length (L): {results['nozzle_length']:.3f} mm")
     print("Data written to: PARAMS.xlsx\n")
+
